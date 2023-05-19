@@ -12,17 +12,22 @@ class CalcController {
     }
 
     initialize() {
-          this.setDisplayDateTime() 
-          setInterval(() =>{
-               setDisplayDateTime()   
-          }, 1000);
+          this.setDisplayDateTime();
+          
+          setInterval( () => {
+               this.setDisplayDateTime()
+          }, 1)
+                
+          initButtonsEvents(){
+               document.querySelectorAll("#buttons > g, #parts > g")
+          }
 
     }
 
      setDisplayDateTime() {
           this.displayDate = this.currentDante.toLocaleDateString(this._locale, {
              day: "2-digit",
-             month: "long",
+             month: "short",
              year: "numeric"
 
           });
